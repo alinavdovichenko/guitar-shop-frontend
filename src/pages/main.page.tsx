@@ -19,7 +19,7 @@ function MainPage(): JSX.Element {
               <Link className="login__link" to={AppRoute.Catalog}>Просмотр товаров — product-list</Link>
             </li>
             <li>
-              <a href="registration.html">Регистрация — registration.html</a>
+              <Link className="login__link" to={AppRoute.Register}>Регистрация — registration</Link>
             </li>
             <li>
               <Link className="login__link" to={AppRoute.Login}>Вход — login</Link>

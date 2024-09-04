@@ -8,6 +8,7 @@ import NotFoundPage from '../../pages/not-found.page';
 import EditItemPage from '../../pages/edit-item.page';
 import ProductPage from '../../pages/product.page';
 import ProductListPage from '../../pages/product-list.page';
+import RegistrationPage from '../../pages/registration.page';
 import { Product } from '../../types/product';
 
 type AppProps = {
@@ -25,6 +26,10 @@ function App({products}: AppProps): JSX.Element {
         <Route
           path={AppRoute.Login}
           element={<LoginPage />}
+        />
+        <Route
+          path={AppRoute.Register}
+          element={<RegistrationPage />}
         />
         <Route
           path={AppRoute.Edit}
