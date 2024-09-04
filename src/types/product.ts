@@ -5,10 +5,10 @@ export enum GuitarType {
 }
 
 export type Product = {
-  id: string;
+  id: number;
   title: string;
   description: string;
-  createdAt: Date;
+  createdAt: string;
   productPhoto: string;
   guitarType: GuitarType;
   article: string;
