@@ -8,7 +8,7 @@ function Header(): JSX.Element {
         <div className="header__wrapper"><Link className="header__logo logo" to={AppRoute.Main}><img className="logo__img" width="70" height="70" src="./img/svg/logo.svg" alt="Логотип"/></Link>
           <nav className="main-nav">
             <ul className="main-nav__list">
-              <li className="main-nav__item"><a className="link main-nav__link" href="#todo">Каталог</a>
+              <li className="main-nav__item"><Link className="link main-nav__link" to={AppRoute.Catalog}>Каталог</Link>
               </li>
               <li className="main-nav__item"><a className="link main-nav__link" href="#todo">Где купить?</a>
               </li>

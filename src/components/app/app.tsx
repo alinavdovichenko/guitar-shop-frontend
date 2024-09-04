@@ -53,7 +53,7 @@ function App({products}: AppProps): JSX.Element {
             path={AppRoute.Product}
             element={
               <PrivateRoute authorizationStatus={AuthorizationStatus.Auth}>
-                <ProductPage />
+                <ProductPage products = {products}/>
               </PrivateRoute>
             }
           />

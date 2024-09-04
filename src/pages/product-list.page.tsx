@@ -82,7 +82,7 @@ function ProductListPage({products}: ProductListPageProps): JSX.Element {
                 cards = {products}
               />
             </div>
-            <button className="button product-list__button button--red button--big">Добавить новый товар</button>
+            <Link className="button product-list__button button--red button--big" to={AppRoute.Add} aria-label="Добавить новый товар">Добавить новый товар</Link>
             <div className="pagination product-list__pagination">
               <ul className="pagination__list">
                 <li className="pagination__page pagination__page--active"><a className="link pagination__page-link" href="1">1</a>

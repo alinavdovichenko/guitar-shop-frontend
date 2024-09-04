@@ -1,4 +1,6 @@
-import {Helmet} from 'react-helmet-async';
+import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
+import { AppRoute } from '../consts';
 import { useState, ChangeEvent, FormEvent } from 'react';
 import Footer from '../components/footer/footer';
 import Header from '../components/header/header';
@@ -8,9 +10,9 @@ function AddItemPage(): JSX.Element {
 
   const [formData, setFormData] = useState({
     titleField: '',
-    dateField: '',
     descriptionField: '',
-    skuField: '',
+    dateField: '',
+    articleField: '',
     priceField: '',
   });
 
@@ -22,13 +24,13 @@ function AddItemPage(): JSX.Element {
   const submitHandle = (evt: FormEvent<HTMLFormElement>) => {
     evt.preventDefault();
 
-    // тут будет диспатч
+    // диспатч
 
     setFormData({
       titleField: '',
       dateField: '',
       descriptionField: '',
-      skuField: '',
+      articleField: '',
       priceField: ''});
   };
 
@@ -43,11 +45,11 @@ function AddItemPage(): JSX.Element {
           <div className="container">
             <h1 className="add-item__title">Новый товар</h1>
             <ul className="breadcrumbs">
-              <li className="breadcrumbs__item"><a className="link" href="./main.html">Вход</a>
+              <li className="breadcrumbs__item"><Link className="link" to={AppRoute.Main}>Вход</Link>
               </li>
-              <li className="breadcrumbs__item"><a className="link" href="#todo">Товары</a>
+              <li className="breadcrumbs__item"><Link className="link" to={AppRoute.Catalog}>Товары</Link>
               </li>
-              <li className="breadcrumbs__item"><a className="link" href="#todo">Новый товар</a>
+              <li className="breadcrumbs__item"><Link className="link" to={AppRoute.Product}>Новый товар</Link>
               </li>
             </ul>
             <form className="add-item__form" action="#" method="get" onSubmit={submitHandle}>
@@ -84,7 +86,7 @@ function AddItemPage(): JSX.Element {
                 </div>
                 <div className="custom-input add-item__form-input">
                   <label><span>Введите артикул товара</span>
-                    <input onChange={fieldChangeHandle} type="text" name="sku" value={formData.skuField} placeholder="Артикул товара" />
+                    <input onChange={fieldChangeHandle} type="text" name="sku" value={formData.articleField} placeholder="Артикул товара" />
                   </label>
                   <p>Заполните поле</p>
                 </div>
