@@ -1,4 +1,5 @@
 import {Route, BrowserRouter, Routes} from 'react-router-dom';
+import {HelmetProvider} from 'react-helmet-async';
 import LoginPage from '../../pages/login.page';
 import MainPage from '../../pages/main.page';
 import AddItemPage from '../../pages/add-item.page';
@@ -17,60 +18,62 @@ type AppProps = {
 
 function App({products}: AppProps): JSX.Element {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route
-          path={AppRoute.Main}
-          element={<MainPage />}
-        />
-        <Route
-          path={AppRoute.Login}
-          element={<LoginPage />}
-        />
-        <Route
-          path={AppRoute.Register}
-          element={<RegistrationPage />}
-        />
-        <Route
-          path={AppRoute.Edit}
-          element={
-            <PrivateRoute authorizationStatus={AuthorizationStatus.Auth}>
-              <EditItemPage products = {products}/>
-            </PrivateRoute>
-          }
-        />
-        <Route
-          path={AppRoute.Add}
-          element={
-            <PrivateRoute authorizationStatus={AuthorizationStatus.Auth}>
-              <AddItemPage />
-            </PrivateRoute>
-          }
-        />
-        <Route
-          path={AppRoute.Product}
-          element={
-            <PrivateRoute authorizationStatus={AuthorizationStatus.Auth}>
-              <ProductPage />
-            </PrivateRoute>
-          }
-        />
-        <Route
-          path={AppRoute.Catalog}
-          element={
-            <PrivateRoute authorizationStatus={AuthorizationStatus.Auth}>
-              <ProductListPage
-                products = {products}
-              />
-            </PrivateRoute>
-          }
-        />
-        <Route
-          path={AppRoute.NotFound}
-          element={<NotFoundPage />}
-        />
-      </Routes>
-    </BrowserRouter>
+    <HelmetProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path={AppRoute.Main}
+            element={<MainPage />}
+          />
+          <Route
+            path={AppRoute.Login}
+            element={<LoginPage />}
+          />
+          <Route
+            path={AppRoute.Register}
+            element={<RegistrationPage />}
+          />
+          <Route
+            path={AppRoute.Edit}
+            element={
+              <PrivateRoute authorizationStatus={AuthorizationStatus.Auth}>
+                <EditItemPage products = {products}/>
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path={AppRoute.Add}
+            element={
+              <PrivateRoute authorizationStatus={AuthorizationStatus.Auth}>
+                <AddItemPage />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path={AppRoute.Product}
+            element={
+              <PrivateRoute authorizationStatus={AuthorizationStatus.Auth}>
+                <ProductPage />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path={AppRoute.Catalog}
+            element={
+              <PrivateRoute authorizationStatus={AuthorizationStatus.Auth}>
+                <ProductListPage
+                  products = {products}
+                />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path={AppRoute.NotFound}
+            element={<NotFoundPage />}
+          />
+        </Routes>
+      </BrowserRouter>
+    </HelmetProvider>
   );
 }
 

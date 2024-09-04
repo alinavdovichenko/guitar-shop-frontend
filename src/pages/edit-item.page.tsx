@@ -1,3 +1,4 @@
+import {Helmet} from 'react-helmet-async';
 import { useParams, Link } from 'react-router-dom';
 import Footer from '../components/footer/footer';
 import Header from '../components/header/header';
@@ -23,6 +24,9 @@ function EditItemPage({products}: ProductListPageProps): JSX.Element {
 
   return (
     <div className="wrapper">
+      <Helmet>
+        <title>Страница «Редактирование товара».</title>
+      </Helmet>
       <Header />
       <main className="page-content">
         <section className="edit-item">

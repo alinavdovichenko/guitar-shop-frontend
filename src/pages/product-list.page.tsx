@@ -4,6 +4,7 @@ import Cards from '../components/cards/cards';
 import { Product } from '../types/product';
 import { AppRoute } from '../consts';
 import { Link } from 'react-router-dom';
+import {Helmet} from 'react-helmet-async';
 
 type ProductListPageProps = {
   products: Product[];
@@ -13,6 +14,9 @@ function ProductListPage({products}: ProductListPageProps): JSX.Element {
 
   return (
     <div className="wrapper">
+      <Helmet>
+        <title>Страница «Список товаров».</title>
+      </Helmet>
       <Header />
       <main className="page-content">
         <section className="product-list">

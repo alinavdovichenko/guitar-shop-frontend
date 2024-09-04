@@ -1,3 +1,4 @@
+import {Helmet} from 'react-helmet-async';
 import { useState, ChangeEvent, FormEvent } from 'react';
 import Footer from '../components/footer/footer';
 import Header from '../components/header/header';
@@ -33,6 +34,9 @@ function AddItemPage(): JSX.Element {
 
   return (
     <div className="wrapper">
+      <Helmet>
+        <title>Страница «Добавление нового товара».</title>
+      </Helmet>
       <Header />
       <main className="page-content">
         <section className="add-item">
