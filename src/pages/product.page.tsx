@@ -16,7 +16,6 @@ function ProductPage({products}: ProductPageProps): JSX.Element {
   if (!selectedProduct) {
     return (<NotFoundPage />);
   }
-
   return (
     <div className="wrapper">
       <Helmet>

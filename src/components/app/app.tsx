@@ -1,6 +1,5 @@
 import {Route, BrowserRouter, Routes} from 'react-router-dom';
 import {HelmetProvider} from 'react-helmet-async';
-import LoginPage from '../../pages/login.page';
 import MainPage from '../../pages/main.page';
 import AddItemPage from '../../pages/add-item.page';
 import { AppRoute, AuthorizationStatus } from '../../consts';
@@ -24,10 +23,6 @@ function App({products}: AppProps): JSX.Element {
           <Route
             path={AppRoute.Main}
             element={<MainPage />}
-          />
-          <Route
-            path={AppRoute.Login}
-            element={<LoginPage />}
           />
           <Route
             path={AppRoute.Register}

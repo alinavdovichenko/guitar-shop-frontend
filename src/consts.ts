@@ -1,7 +1,6 @@
 export enum AppRoute {
   Main = '/',
   Register = '/register',
-  Login = '/login',
   Add = '/add',
   Edit = '/edit/:id',
   Catalog = '/products',

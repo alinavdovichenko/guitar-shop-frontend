@@ -27,7 +27,7 @@ function EditForm({product}: EditFormProps): JSX.Element {
   const submitHandle = (evt: FormEvent<HTMLFormElement>) => {
     evt.preventDefault();
 
-    // тут будет диспатч
+    // диспатч
   };
 
   return (
