@@ -8,6 +8,12 @@ export enum AppRoute {
   NotFound ='*',
 }
 
+export enum ApiRoute {
+  Product = '/Product',
+  Products = '/Products',
+  Login = '/login',
+}
+
 export const GUITAR_TYPES = [
   {title: 'Акустическая гитара', value: 'acoustic'},
   {title: 'Электрогитара', value: 'electric'},
@@ -26,3 +32,23 @@ export enum AuthorizationStatus {
   NoAuth = 'NO_AUTH',
   Unknown = 'UNKNOWN',
 }
+
+export enum NameSpace {
+  User = 'USER',
+  Product = 'PRODUCT',
+  Products = 'PRODUCTS',
+}
+
+export enum SortType {
+  DateAsc = 'First by date',
+  PriceAsc = 'First by price',
+  DateDesc = 'Last by date',
+  PriceDesc = 'Last by price',
+}
+
+export enum SortDirection {
+  Asc = 'asc',
+  Desc = 'desc',
+}
+
+export const DEFAULT_SORT = SortType.DateAsc;
