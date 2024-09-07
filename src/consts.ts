@@ -40,15 +40,15 @@ export enum NameSpace {
 }
 
 export enum SortType {
-  DateAsc = 'First by date',
-  PriceAsc = 'First by price',
-  DateDesc = 'Last by date',
-  PriceDesc = 'Last by price',
+  Date = 'По дате',
+  Price = 'По цене',
 }
 
 export enum SortDirection {
-  Asc = 'asc',
-  Desc = 'desc',
+  Up = 'По возрастанию',
+  Down = 'По убыванию',
 }
 
-export const DEFAULT_SORT = SortType.DateAsc;
+export const DEFAULT_SORT_TYPE = SortType.Date;
+
+export const DEFAULT_SORT_DIRECTION = SortDirection.Up;

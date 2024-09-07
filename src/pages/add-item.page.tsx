@@ -9,11 +9,11 @@ import RadioButtons from '../components/radio-buttons/radio-buttons';
 function AddItemPage(): JSX.Element {
 
   const [formData, setFormData] = useState({
-    titleField: '',
-    descriptionField: '',
     dateField: '',
-    articleField: '',
+    titleField: '',
     priceField: '',
+    articleField: '',
+    descriptionField: '',
   });
 
   const fieldChangeHandle = (evt: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -21,17 +21,21 @@ function AddItemPage(): JSX.Element {
     setFormData({...formData, [name]: value});
   };
 
-  const submitHandle = (evt: FormEvent<HTMLFormElement>) => {
-    evt.preventDefault();
-
-    // диспатч
-
+  const resetFormHandle = () => {
     setFormData({
       titleField: '',
       dateField: '',
       descriptionField: '',
       articleField: '',
       priceField: ''});
+  };
+
+  const submitHandle = (evt: FormEvent<HTMLFormElement>) => {
+    evt.preventDefault();
+
+    // диспатч
+
+    resetFormHandle();
   };
 
   return (
@@ -99,7 +103,9 @@ function AddItemPage(): JSX.Element {
               </div>
               <div className="add-item__form-buttons-wrap">
                 <button className="button button--small add-item__form-button" type="submit">Сохранить изменения</button>
-                <button className="button button--small add-item__form-button" type="button">Вернуться к списку товаров</button>
+                <Link to={AppRoute.Catalog}>
+                  <button className="button button--small add-item__form-button" type="button">Вернуться к списку товаров</button>
+                </Link>
               </div>
             </form>
           </div>

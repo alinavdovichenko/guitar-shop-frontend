@@ -1,11 +1,12 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
-import {NameSpace, DEFAULT_SORT, SortType} from '../../consts';
+import {NameSpace, DEFAULT_SORT_TYPE, SortType, DEFAULT_SORT_DIRECTION, SortDirection} from '../../consts';
 import {ProductsProcess} from '../../types/state';
 import {fetchProductsAction} from '../api-actions';
 import {Product} from '../../types/product';
 
 const initialState: ProductsProcess = {
-  sortType: DEFAULT_SORT,
+  sortType: DEFAULT_SORT_TYPE,
+  sortDirection: DEFAULT_SORT_DIRECTION,
   products: [],
   productsIsLoading: false,
   productsIsNotFound: false,
@@ -17,6 +18,9 @@ export const productsSlice = createSlice({
   reducers: {
     setSortType(state, action: PayloadAction<SortType>) {
       state.sortType = action.payload;
+    },
+    setSortDirection(state, action: PayloadAction<SortDirection>) {
+      state.sortDirection = action.payload;
     },
   },
 
@@ -42,4 +46,4 @@ export const productsSlice = createSlice({
   },
 });
 
-export const {setSortType} = productsSlice.actions;
+export const {setSortType, setSortDirection} = productsSlice.actions;

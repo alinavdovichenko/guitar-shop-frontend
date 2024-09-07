@@ -1,6 +1,7 @@
 import Footer from '../components/footer/footer';
 import Header from '../components/header/header';
 import Cards from '../components/cards/cards';
+import Sort from '../components/sort/sort';
 import { Product } from '../types/product';
 import { AppRoute } from '../consts';
 import { Link } from 'react-router-dom';
@@ -67,17 +68,7 @@ function ProductListPage({products}: ProductListPageProps): JSX.Element {
                 </fieldset>
                 <button className="catalog-filter__reset-btn button button--black-border button--medium" type="reset">Очистить</button>
               </form>
-              <div className="catalog-sort">
-                <h2 className="catalog-sort__title">Сортировать:</h2>
-                <div className="catalog-sort__type">
-                  <button className="catalog-sort__type-button catalog-sort__type-button--active" aria-label="по цене">по дате</button>
-                  <button className="catalog-sort__type-button" aria-label="по цене">по цене</button>
-                </div>
-                <div className="catalog-sort__order">
-                  <button className="catalog-sort__order-button catalog-sort__order-button--up" aria-label="По возрастанию"></button>
-                  <button className="catalog-sort__order-button catalog-sort__order-button--down catalog-sort__order-button--active" aria-label="По убыванию"></button>
-                </div>
-              </div>
+              <Sort />
               <Cards
                 cards = {products}
               />

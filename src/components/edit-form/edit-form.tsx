@@ -1,7 +1,9 @@
+import { Link } from 'react-router-dom';
 import { Product } from '../../types/product';
 import { useState, ChangeEvent, FormEvent } from 'react';
 import RadioButtons from '../radio-buttons/radio-buttons';
 import dayjs from 'dayjs';
+import { AppRoute } from '../../consts';
 
 type EditFormProps = {
     product: Product;
@@ -79,7 +81,9 @@ function EditForm({product}: EditFormProps): JSX.Element {
       </div>
       <div className="edit-item__form-buttons-wrap">
         <button className="button button--small edit-item__form-button" type="submit">Сохранить изменения</button>
-        <button className="button button--small edit-item__form-button" type="button">Вернуться к списку товаров</button>
+        <Link to={AppRoute.Catalog}>
+          <button className="button button--small edit-item__form-button" type="button">Вернуться к списку товаров</button>
+        </Link>
       </div>
     </form>
   );

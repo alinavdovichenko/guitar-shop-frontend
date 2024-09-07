@@ -1,5 +1,5 @@
 import {store} from '../store/index';
-import {AuthorizationStatus, SortType} from '../consts';
+import {AuthorizationStatus, SortType, SortDirection} from '../consts';
 import {UserConnect} from '../types/user';
 import {Product} from '../types/product';
 
@@ -15,6 +15,7 @@ export type UserProcess = {
 
 export type ProductsProcess = {
   sortType: SortType;
+  sortDirection: SortDirection;
   products: Product[];
   productsIsLoading: boolean;
   productsIsNotFound: boolean;
