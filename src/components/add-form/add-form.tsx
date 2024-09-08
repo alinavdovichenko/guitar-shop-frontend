@@ -1,19 +1,11 @@
 import { Link } from 'react-router-dom';
-import { Product } from '../../types/product';
 import { useState, FormEvent } from 'react';
-import dayjs from 'dayjs';
 import { AppRoute, GUITAR_TYPES, CountStrut, FormFieldName } from '../../consts';
 
-type EditFormProps = {
-    product: Product;
-}
+function AddForm(): JSX.Element {
+  const [guitarTypeState, setGuitarTypeState] = useState('');
 
-
-function EditForm({product}: EditFormProps): JSX.Element {
-
-  const [guitarTypeState, setGuitarTypeState] = useState(product.guitarType);
-
-  const [countStrutState, setCountStrutState] = useState(product.countStrut);
+  const [countStrutState, setCountStrutState] = useState('');
 
   const submitHandle = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -29,8 +21,7 @@ function EditForm({product}: EditFormProps): JSX.Element {
 
     /*
       dispatch(
-        submitUpdateProductAction({
-          id: product.id,
+        submitAddProductAction({
           data,
           guitarTypeState,
           countStrutState,
@@ -43,34 +34,26 @@ function EditForm({product}: EditFormProps): JSX.Element {
   return (
     <form
       action="#"
-      className="edit-item__form"
+      className="add-item__form"
       method="get"
       onSubmit={submitHandle}
     >
-      <div className="edit-item__form-left">
-        <div className="edit-item-image edit-item__form-image">
+      <div className="add-item__form-left">
+        <div className="edit-item-image add-item__form-image">
           <div className="edit-item-image__image-wrap">
-            <img
-              alt="СURT Z30 Plus"
-              className="edit-item-image__image"
-              height="332"
-              src={`img/content/add-item-${product.id}.png`}
-              srcSet={`img/content/add-item-${product.id}@2x.png 2x`}
-              width="133"
-            />
           </div>
           <div className="edit-item-image__btn-wrap">
             <button className="button button--small button--black-border edit-item-image__btn">
-              Заменить
+              Добавить
             </button>
             <button className="button button--small button--black-border edit-item-image__btn">
               Удалить
             </button>
           </div>
         </div>
-        <div className="input-radio edit-item__form-radio">
+        <div className="input-radio add-item__form-radio">
           <span>
-            Тип товара
+            Выберите тип товара
           </span>
           {GUITAR_TYPES.map((type) => (
             <>
@@ -87,7 +70,7 @@ function EditForm({product}: EditFormProps): JSX.Element {
           )
           )}
         </div>
-        <div className="input-radio edit-item__form-radio">
+        <div className="input-radio add-item__form-radio">
           <span>
             Количество струн
           </span>
@@ -107,14 +90,14 @@ function EditForm({product}: EditFormProps): JSX.Element {
           )}
         </div>
       </div>
-      <div className="edit-item__form-right">
-        <div className="custom-input edit-item__form-input">
+      <div className="add-item__form-right">
+        <div className="custom-input add-item__form-input">
           <label>
             <span>
               Дата добавления товара
             </span>
             <input
-              defaultValue={dayjs(product.createdAt).format('DD.MM.YYYY')}
+              defaultValue=""
               name={FormFieldName.createdAt}
               placeholder="Дата в формате 00.00.0000"
               readOnly
@@ -125,13 +108,13 @@ function EditForm({product}: EditFormProps): JSX.Element {
             Заполните поле
           </p>
         </div>
-        <div className="custom-input edit-item__form-input">
+        <div className="custom-input add-item__form-input">
           <label>
             <span>
-              Наименование товара
+              Введите наименование товара
             </span>
             <input
-              defaultValue={product.title}
+              defaultValue=""
               name={FormFieldName.title}
               placeholder="Наименование"
               type="text"
@@ -144,13 +127,13 @@ function EditForm({product}: EditFormProps): JSX.Element {
             Заполните поле
           </p>
         </div>
-        <div className="custom-input edit-item__form-input edit-item__form-input--price">
+        <div className="custom-input add-item__form-input add-item__form-input--price is-placeholder">
           <label>
             <span>
-              Цена товара
+              Введите цену товара
             </span>
             <input
-              defaultValue={product.price}
+              defaultValue=""
               name={FormFieldName.price}
               placeholder="Цена в формате 00 000"
               type="text"
@@ -163,13 +146,13 @@ function EditForm({product}: EditFormProps): JSX.Element {
             Заполните поле
           </p>
         </div>
-        <div className="custom-input edit-item__form-input">
+        <div className="custom-input add-item__form-input">
           <label>
             <span>
-              Артикул товара
+              Введите артикул товара
             </span>
             <input
-              defaultValue={product.article}
+              defaultValue=""
               name={FormFieldName.article}
               placeholder="Артикул товара"
               type="text"
@@ -182,15 +165,15 @@ function EditForm({product}: EditFormProps): JSX.Element {
             Заполните поле
           </p>
         </div>
-        <div className="custom-textarea edit-item__form-textarea">
+        <div className="custom-textarea add-item__form-textarea">
           <label>
             <span>
-              Описание товара
+              Введите описание товара
             </span>
             <textarea
-              defaultValue={product.description}
               name={FormFieldName.description}
               placeholder=""
+              defaultValue=""
               minLength={20}
               maxLength={1024}
               required
@@ -201,16 +184,16 @@ function EditForm({product}: EditFormProps): JSX.Element {
           </p>
         </div>
       </div>
-      <div className="edit-item__form-buttons-wrap">
+      <div className="add-item__form-buttons-wrap">
         <button
-          className="button button--small edit-item__form-button"
+          className="button button--small add-item__form-button"
           type="submit"
         >
           Сохранить изменения
         </button>
         <Link to={AppRoute.Catalog}>
           <button
-            className="button button--small edit-item__form-button"
+            className="button button--small add-item__form-button"
             type="button"
           >
             Вернуться к списку товаров
@@ -221,4 +204,4 @@ function EditForm({product}: EditFormProps): JSX.Element {
   );
 }
 
-export default EditForm;
+export default AddForm;

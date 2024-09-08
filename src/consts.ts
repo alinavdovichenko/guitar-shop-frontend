@@ -54,3 +54,11 @@ export enum SortDirection {
 export const DEFAULT_SORT_TYPE = SortType.Date;
 
 export const DEFAULT_SORT_DIRECTION = SortDirection.Up;
+
+export enum FormFieldName {
+  title = 'title',
+  description = 'description',
+  createdAt = 'createdAt',
+  article = 'article',
+  price = 'price',
+}
