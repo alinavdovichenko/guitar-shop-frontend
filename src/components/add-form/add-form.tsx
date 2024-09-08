@@ -21,7 +21,7 @@ function AddForm(): JSX.Element {
 
     /*
       dispatch(
-        submitAddProductAction({
+        addProductAction({
           data,
           guitarTypeState,
           countStrutState,

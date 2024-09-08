@@ -17,3 +17,14 @@ export type Product = {
   countStrut: CountStrut;
   price: number;
 }
+
+export type ProductData = {
+  id: number;
+  title: string;
+  description: string;
+  createdAt: string;
+  guitarType: GuitarType;
+  article: string;
+  countStrut: CountStrut;
+  price: number;
+}

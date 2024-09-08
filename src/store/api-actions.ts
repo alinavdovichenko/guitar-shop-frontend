@@ -7,8 +7,7 @@ import {saveToken} from '../services/token';
 import {ApiRoute, AppRoute} from '../consts';
 import {AuthData} from '../types/auth-data';
 import {UserConnect} from '../types/user';
-import {Product} from '../types/product';
-
+import {Product, ProductData} from '../types/product';
 
 export const checkAuthAction = createAsyncThunk<UserConnect, undefined, {
   dispatch: AppDispatch;
@@ -54,3 +53,24 @@ export const fetchProductAction = createAsyncThunk<
 
   return data;
 });
+
+export const addProductAction = createAsyncThunk<
+  Product,
+  ProductData,
+  ThunkApiConfig
+>('addProduct', async ({id, title, description, guitarType, article, countStrut, price}, {extra: api}) => {
+  try {
+    const {data} = await api.post<Product>(`${ApiRoute.Products}/${id}`, {
+      title: title,
+      description: description,
+      price: price,
+      guitarType: guitarType,
+      article: article,
+      countStrut: countStrut,
+    });
+    return data;
+  } catch (error) {
+    throw new Error();
+  }
+});
+
