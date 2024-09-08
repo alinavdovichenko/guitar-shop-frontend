@@ -62,3 +62,9 @@ export enum FormFieldName {
   article = 'article',
   price = 'price',
 }
+
+export const FILTER_GUITAR_TYPES = [
+  {title: 'Акустическая гитара', value: 'acoustic'},
+  {title: 'Электрогитара', value: 'electric'},
+  {title: 'Укулеле', value: 'ukulele'},
+];

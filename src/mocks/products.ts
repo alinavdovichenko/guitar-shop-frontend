@@ -1,4 +1,5 @@
 import { Product, GuitarType } from '../types/product';
+import { CountStrut} from '../consts';
 
 export const products: Product[] = [
   {
@@ -9,7 +10,7 @@ export const products: Product[] = [
     productPhoto: 'img/content/catalog-product-1.png',
     guitarType: GuitarType.Electric,
     article: 'A051984',
-    countStrut: 6,
+    countStrut: CountStrut.Six,
     price: 10000,
   },
   {
@@ -20,7 +21,7 @@ export const products: Product[] = [
     productPhoto: 'img/content/catalog-product-2.png',
     guitarType: GuitarType.Acoustic,
     article: 'A186242',
-    countStrut: 12,
+    countStrut: CountStrut.Twelve,
     price: 19790,
   },
   {
@@ -31,7 +32,7 @@ export const products: Product[] = [
     productPhoto: 'img/content/catalog-product-3.png',
     guitarType: GuitarType.Electric,
     article: 'A134587',
-    countStrut: 6,
+    countStrut: CountStrut.Six,
     price: 15950,
   },
   {
@@ -42,7 +43,7 @@ export const products: Product[] = [
     productPhoto: 'img/content/catalog-product-4.png',
     guitarType: GuitarType.Ukulele,
     article: 'A051988',
-    countStrut: 4,
+    countStrut: CountStrut.Four,
     price: 6574,
   }
 
