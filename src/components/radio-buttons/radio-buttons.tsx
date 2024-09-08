@@ -12,7 +12,14 @@ function RadioButtons(): JSX.Element {
       <div className="input-radio edit-item__form-radio"><span>Тип товара</span>
         {GUITAR_TYPES.map((type) => (
           <>
-            <input type="radio" id={type.value} name="item-type" value={type.value} onClick={() => setGuitarState(type.value)} checked={guitarState === type.value}/>
+            <input
+              type="radio"
+              id={type.value}
+              name="item-type"
+              value={type.value}
+              onClick={() => setGuitarState(type.value)}
+              checked={guitarState === type.value}
+            />
             <label htmlFor={type.value}>{type.title}</label>
           </>
         )

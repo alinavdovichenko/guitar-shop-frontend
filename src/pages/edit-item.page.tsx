@@ -1,18 +1,18 @@
 import { Helmet } from 'react-helmet-async';
 import { useParams, Link } from 'react-router-dom';
-import Footer from '../components/footer/footer';
-import Header from '../components/header/header';
 import { Product } from '../types/product';
 import NotFoundPage from './not-found.page';
 import EditForm from '../components/edit-form/edit-form';
 import { AppRoute } from '../consts';
+import Footer from '../components/footer/footer';
+import Header from '../components/header/header';
 
-type ProductListPageProps = {
+type EditItemPageProps = {
   products: Product[];
 }
 
 
-function EditItemPage({products}: ProductListPageProps): JSX.Element {
+function EditItemPage({products}: EditItemPageProps): JSX.Element {
 
   const params = useParams();
 

@@ -1,3 +1,5 @@
+import { GuitarType } from './types/product';
+
 export enum AppRoute {
   Main = '/',
   Register = '/register',
@@ -15,9 +17,9 @@ export enum ApiRoute {
 }
 
 export const GUITAR_TYPES = [
-  {title: 'Акустическая гитара', value: 'acoustic'},
-  {title: 'Электрогитара', value: 'electric'},
-  {title: 'Укулеле', value: 'ukulele'},
+  {title: 'Акустическая гитара', value: GuitarType.Acoustic},
+  {title: 'Электрогитара', value: GuitarType.Electric},
+  {title: 'Укулеле', value: GuitarType.Ukulele},
 ];
 
 export enum CountStrut {

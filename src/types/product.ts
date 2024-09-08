@@ -1,7 +1,9 @@
+import { CountStrut } from '../consts';
+
 export enum GuitarType {
-  Electric = 'Electric',
-  Acoustic = 'Acoustic',
-  Ukulele = 'Ukulele',
+  Electric = 'el-guitar',
+  Acoustic = 'guitar',
+  Ukulele = 'ukulele',
 }
 
 export type Product = {
@@ -12,6 +14,6 @@ export type Product = {
   productPhoto: string;
   guitarType: GuitarType;
   article: string;
-  countStrut: number;
+  countStrut: CountStrut;
   price: number;
 }
